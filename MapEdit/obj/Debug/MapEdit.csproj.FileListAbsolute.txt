@@ -1,0 +1,11 @@
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\bin\Debug\MapEdit.exe.config
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\bin\Debug\MapEdit.exe
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\bin\Debug\MapEdit.pdb
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.csprojResolveAssemblyReference.cache
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.Form1.resources
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.Properties.Resources.resources
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.csproj.GenerateResource.Cache
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.exe
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.pdb
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\bin\Debug\tiles.xml
+H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.PreviewWindow.resources

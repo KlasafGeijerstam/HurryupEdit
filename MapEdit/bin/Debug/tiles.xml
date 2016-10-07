@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<hurryupgame>
+  <object id="0" logic="false" type="air" pcol="255,255,255"/>
+  <object id="1" logic="false" type="normalground" pcol="0,0,0"/>
+  <object id="2" logic="true" type="button" pcol="255,0,0"/>
+  <object id="3" logic="true" type="door" pcol="0,255,0"/>
+  <object id="4" logic="true" type="lotand" pcol="0,0,255"/>
+  <object id="5" logic="true" type="lotnot" pcol="10,10,10"/>
+  <object id="6" logic="true" type="lotor" pcol="10,10,10"/>
+  <object id="7" logic="true" type="lever" pcol="10,10,10"/>
+  <object id="21" logic="false" type="player1position" pcol="10,10,10"/>
+  <object id="22" logic="false" type="player2position" pcol="10,10,10"/>
+  <map id="19">
+    1,0,0,0,4:4,0,0,5:5,0,0,0,0,0,0,0,0,0,0,0,1
+    1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+    1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+    1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+    1,1,21,22,1,1,1,0,7:10,0,0,2:1,0,2:2,0,0,0,0,0,3:3
+    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+  </map>
+  <logic id="0002">
+    <connection connectionvalue="1" from="1" to="4"/>
+    <connection connectionvalue="0" from="4" to="3"/>
+    <connection connectionvalue="0" from="5" to="4"/>
+    <connection connectionvalue="0" from="10" to="5"/>
+  </logic>
+</hurryupgame>
