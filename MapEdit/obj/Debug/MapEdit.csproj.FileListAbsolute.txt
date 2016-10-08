@@ -9,3 +9,6 @@ H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.exe
 H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.pdb
 H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\bin\Debug\tiles.xml
 H:\edu\HurryUpGame\MapEditor\MapEdit\MapEdit\obj\Debug\MapEdit.PreviewWindow.resources
+A:\Users\Klas\Documents\Projects\HurryupEdit\MapEdit\bin\Debug\MapEdit.exe.config
+A:\Users\Klas\Documents\Projects\HurryupEdit\MapEdit\obj\Debug\MapEdit.exe
+A:\Users\Klas\Documents\Projects\HurryupEdit\MapEdit\obj\Debug\MapEdit.pdb
