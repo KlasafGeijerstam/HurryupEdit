@@ -97,6 +97,7 @@ namespace MapEdit
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
             LoadTileTypes();
             comboBox1.SelectedIndex = 0;
         }
@@ -282,6 +283,7 @@ namespace MapEdit
 
         }
 
+
         private void button4_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
@@ -314,6 +316,7 @@ namespace MapEdit
 
             } 
         }
+
     }
 
     public class Tile
