@@ -1,0 +1,11 @@
+H:\Desktop\map\MapEdit\MapEdit\bin\Debug\tiles.xml
+H:\Desktop\map\MapEdit\MapEdit\bin\Debug\MapEdit.exe.config
+H:\Desktop\map\MapEdit\MapEdit\bin\Debug\MapEdit.exe
+H:\Desktop\map\MapEdit\MapEdit\bin\Debug\MapEdit.pdb
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.csprojResolveAssemblyReference.cache
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.Form1.resources
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.PreviewWindow.resources
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.Properties.Resources.resources
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.csproj.GenerateResource.Cache
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.exe
+H:\Desktop\map\MapEdit\MapEdit\obj\Debug\MapEdit.pdb

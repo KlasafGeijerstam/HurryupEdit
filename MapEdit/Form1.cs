@@ -290,28 +290,44 @@ namespace MapEdit
             ofd.Filter = "(map)|*.xml";
             if(ofd.ShowDialog() == DialogResult.OK)
             {
-                var doc = XDocument.Load(ofd.FileName);
-                //Map
-                var sa = doc.Root.Element("map").Value.Split('\n');
-                dataGridView1.RowCount = sa.Length;
-                dataGridView1.ColumnCount = sa[0].Split(',').Length;
-
-                for (int i = 0; i < sa.Length; i++)
+                try
                 {
-                    var sub = sa[i].Split(',');
-                    for (int x = 0; x < sub.Length; x++)
+                    var doc = XDocument.Load(ofd.FileName);
+                    //Map
+                    var sa = doc.Root.Element("map").Value.Split('\n');
+                    dataGridView1.RowCount = sa.Length;
+                    dataGridView1.ColumnCount = sa[0].Split(',').Length;
+
+                    for (int i = 0; i < sa.Length; i++)
                     {
-                        var item = sub[x].Split(':');
-                        if (item[0] == string.Empty)
-                            continue;
-                        var tile = Tile.Copy(tiles[int.Parse(item[0])]);
-                        dataGridView1.Rows[i].Cells[x].Value = new CellItem() { Tile = tile , Type = tile.Type };
+                        var sub = sa[i].Split(',');
+                        for (int x = 0; x < sub.Length; x++)
+                        {
+                            var item = sub[x].Split(':');
+                            if (item[0] == string.Empty)
+                                continue;
+                            var tile = Tile.Copy(tiles[int.Parse(item[0])]);
+                            dataGridView1.Rows[i].Cells[x].Value = new CellItem() { Tile = tile, Type = tile.Type };
+                        }
+                    }
+
+                    foreach (DataGridViewColumn c in dataGridView1.Columns)
+                    {
+                        c.Width = cellSize.Y;
+                    }
+
+                    //Connections
+                    connectionsListBox.Items.Clear();
+                    foreach (var el in doc.Root.Element("logic").Elements("connection"))
+                    {
+                        
+                        connectionsListBox.Items.Add(new Connection() { ConnectionValue = int.Parse(el.Attribute("connectionvalue").Value), From = int.Parse(el.Attribute("from").Value), To = int.Parse(el.Attribute("to").Value) });
                     }
                 }
-
-                foreach (DataGridViewColumn c in dataGridView1.Columns)
+                catch (Exception)
                 {
-                    c.Width = cellSize.Y;
+
+                    MessageBox.Show("Error parsing map file");
                 }
 
             } 
