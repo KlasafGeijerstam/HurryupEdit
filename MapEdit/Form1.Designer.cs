@@ -44,6 +44,7 @@
             this.widthNumeric = new System.Windows.Forms.NumericUpDown();
             this.saveBtn = new System.Windows.Forms.Button();
             this.previewBtn = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -214,11 +215,22 @@
             this.previewBtn.UseVisualStyleBackColor = true;
             this.previewBtn.Click += new System.EventHandler(this.previewBtn_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1118, 725);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Load";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 851);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.groupBox2);
@@ -255,6 +267,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button previewBtn;
+        private System.Windows.Forms.Button button4;
     }
 }
 

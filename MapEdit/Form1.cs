@@ -281,6 +281,39 @@ namespace MapEdit
             d.ShowDialog();
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog();
+            ofd.Filter = "(map)|*.xml";
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                var doc = XDocument.Load(ofd.FileName);
+                //Map
+                var sa = doc.Root.Element("map").Value.Split('\n');
+                dataGridView1.RowCount = sa.Length;
+                dataGridView1.ColumnCount = sa[0].Split(',').Length;
+
+                for (int i = 0; i < sa.Length; i++)
+                {
+                    var sub = sa[i].Split(',');
+                    for (int x = 0; x < sub.Length; x++)
+                    {
+                        var item = sub[x].Split(':');
+                        if (item[0] == string.Empty)
+                            continue;
+                        var tile = Tile.Copy(tiles[int.Parse(item[0])]);
+                        dataGridView1.Rows[i].Cells[x].Value = new CellItem() { Tile = tile , Type = tile.Type };
+                    }
+                }
+
+                foreach (DataGridViewColumn c in dataGridView1.Columns)
+                {
+                    c.Width = cellSize.Y;
+                }
+
+            } 
+        }
     }
 
     public class Tile
