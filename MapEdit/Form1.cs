@@ -81,6 +81,7 @@ namespace MapEdit
                             curConnection = null;
                             connectionMode = false;
                             checkBox1.Checked = false;
+                            button2.Text = "Connect";
                         }
                     }
                 } 
@@ -187,10 +188,22 @@ namespace MapEdit
 
         private void button2_Click(object sender, EventArgs e)
         {
-            checkBox1.Checked = true;
-            connectionMode = true;
-            curConnection = new Connection() { ConnectionValue = (int)connectionValueUpDown.Value };
-            dataGridView1.ClearSelection();
+            if (!connectionMode)
+            {
+                checkBox1.Checked = true;
+                connectionMode = true;
+                curConnection = new Connection() { ConnectionValue = (int)connectionValueUpDown.Value };
+                dataGridView1.ClearSelection();
+                button2.Text = "Cancel";
+            }
+            else
+            {
+                connectionMode = false;
+                checkBox1.Checked = false;
+                curConnection = null;
+                dataGridView1.ClearSelection();
+                button2.Text = "Connect";
+            }
         }
 
         private void connectionsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -283,7 +296,11 @@ namespace MapEdit
 
         }
 
-
+        /// <summary>
+        /// Load button click event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
@@ -295,18 +312,22 @@ namespace MapEdit
                     var doc = XDocument.Load(ofd.FileName);
                     //Map
                     var sa = doc.Root.Element("map").Value.Split('\n');
-                    dataGridView1.RowCount = sa.Length;
+                    dataGridView1.RowCount = sa.Length-1;
                     dataGridView1.ColumnCount = sa[0].Split(',').Length;
-
-                    for (int i = 0; i < sa.Length; i++)
+                    heightNumeric.Value = sa.Length-1;
+                    widthNumeric.Value = sa[0].Split(',').Length;
+                    for (int i = 0; i < sa.Length-1; i++)
                     {
                         var sub = sa[i].Split(',');
+                        
                         for (int x = 0; x < sub.Length; x++)
                         {
                             var item = sub[x].Split(':');
                             if (item[0] == string.Empty)
                                 continue;
                             var tile = Tile.Copy(tiles[int.Parse(item[0])]);
+                            if (item.Length > 1)
+                                tile.ID = int.Parse(item[1]);
                             dataGridView1.Rows[i].Cells[x].Value = new CellItem() { Tile = tile, Type = tile.Type };
                         }
                     }
