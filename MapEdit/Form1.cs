@@ -82,6 +82,7 @@ namespace MapEdit
                             connectionMode = false;
                             checkBox1.Checked = false;
                             button2.Text = "Connect";
+                            dataGridView1.MultiSelect = true;
                         }
                     }
                 } 
@@ -203,6 +204,7 @@ namespace MapEdit
                 curConnection = null;
                 dataGridView1.ClearSelection();
                 button2.Text = "Connect";
+                dataGridView1.MultiSelect = true;
             }
         }
 
@@ -224,6 +226,11 @@ namespace MapEdit
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            var sfd = new SaveFileDialog();
+            sfd.Filter = "(xml)|*.xml";
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+
             XDocument xdoc = new XDocument();
             var root = new XElement("hurryupgame");
 
@@ -261,7 +268,7 @@ namespace MapEdit
             root.Add(con);
 
             xdoc.Add(root);
-            xdoc.Save("map.xml");
+            xdoc.Save(sfd.FileName);
             
 
         }
