@@ -45,6 +45,8 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.previewBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.levelBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -225,11 +227,29 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // levelBox
+            // 
+            this.levelBox.Location = new System.Drawing.Point(1116, 369);
+            this.levelBox.Name = "levelBox";
+            this.levelBox.Size = new System.Drawing.Size(100, 20);
+            this.levelBox.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1040, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Next level: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 851);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.levelBox);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.saveBtn);
@@ -246,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.heightNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.widthNumeric)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -268,6 +289,8 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button previewBtn;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox levelBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -264,6 +264,9 @@ namespace MapEdit
                 c.SetAttributeValue("to", connection.To);
                 con.Add(c);
             }
+            var nextLevel = new XElement("nextLevel");
+            nextLevel.SetAttributeValue("level", levelBox.Text);
+            con.Add(nextLevel);
             root.Add(map);
             root.Add(con);
 
